@@ -188,7 +188,7 @@ export class Service {
 
   private static paramNamePattern = new RegExp('^(?:function(?:\\s+\\w+)?\\s*)?\\(([^)]*)\\)', 'm');
 
-  private static parameterNames(f: Function): string[] {
+  static parameterNames(f: Function): string[] {
     // @ts-ignore
     const paramNames = f.toString().match(Service.paramNamePattern)[1];
     if (paramNames.length === 0) {
